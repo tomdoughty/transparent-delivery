@@ -80,7 +80,6 @@ export default function Index({ title, services }: Props) {
 export const getStaticProps: GetStaticProps = async () => {
   const content = getHomeContent();
   const tags = listTags();
-  console.log(tags);
   return {
     props: {
       ...content,
