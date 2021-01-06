@@ -145,8 +145,7 @@ collections:
     files:
       - label: "Home"
         name: "home"
-        file: "src/pages/index"
-        extension: "mdx"
+        file: "src/pages/home.mdx"
         format: "frontmatter"
         fields:
           - label: "Slug"
