@@ -30,8 +30,8 @@ export default function Index({
   tags,
   description,
 }: Props) {
-  const keywords = tags.map((it) => getTag(it).name);
-  const authorName = getAuthor(author).name;
+  const keywords = []; //tags.map((it) => getTag(it).name);
+  const authorName = 'tomdoughty' // getAuthor(author).name;
   return ({ children: content }) => {
     return (
       <Layout>
