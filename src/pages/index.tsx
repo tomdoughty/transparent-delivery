@@ -9,10 +9,14 @@ import { listTags } from "../lib/tags";
 
 type Props = {
   title: string;
+  body: string;
+  date: string;
+  slug: string;
+  tags?: string[];
   services: HomeService[];
 };
 
-export default function Index({ title, services }: Props) {
+export default function Index({ title, body, date, slug, tags, services }: Props) {
   return (
     <Layout>
       <BasicMeta url={"/"} />

@@ -5,6 +5,9 @@ import yaml from "js-yaml";
 export type HomeContent = {
   readonly title: string;
   readonly body: string;
+  readonly date: string;
+  readonly slug: string;
+  readonly tags?: string[];
   readonly services: HomeService[];
 };
 
@@ -33,6 +36,9 @@ export function getHomeContent(): HomeContent {
   const matterData = matterResult.data as {
     title: string;
     body: string;
+    date: string;
+    slug: string;
+    tags?: string[];
     services: HomeService[];
   };
 

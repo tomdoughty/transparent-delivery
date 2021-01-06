@@ -145,10 +145,9 @@ collections:
     files:
       - label: "Home"
         name: "home"
-        file: "src/pages/index.mdx"
-        slug: "/"
-        identifier_field: slug
-        summary: "{{title}}"
+        file: "src/pages/index"
+        extension: "mdx"
+        format: "frontmatter"
         fields:
           - label: "Slug"
             name: "slug"
