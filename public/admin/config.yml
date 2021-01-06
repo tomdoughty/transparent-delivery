@@ -151,8 +151,8 @@ collections:
         fields:
           - { label: "Slug",  name: "slug", widget: "string" }
           - { label: "Title", name: "title", widget: "string" }
-          # - { label: "Publish Date",  name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "YYYY-MM-DD", timeFormat: false }
-          # - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Publish Date",  name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "YYYY-MM-DD", timeFormat: false }
+          - { label: "Body", name: "body", widget: "markdown" }
           # - label: 'Services'
           #   name: "services"
           #   widget: list
