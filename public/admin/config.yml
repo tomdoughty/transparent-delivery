@@ -145,7 +145,10 @@ collections:
     files:
       - label: "Home"
         name: "home"
-        file: "src/pages/home.mdx"
+        file: "src/pages/home"
+        extension: "mdx"
+        format: "frontmatter"
+        slug: "/"
         fields:
           - { label: "Title", name: "title", widget: "string"}
           - { label: "Body", name: "body", widget: "markdown"}

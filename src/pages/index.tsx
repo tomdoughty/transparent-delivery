@@ -1,11 +1,11 @@
-import matter from "gray-matter";
 import { GetStaticProps } from "next";
 import Layout from "../components/Layout";
 import BasicMeta from "../components/meta/BasicMeta";
 import OpenGraphMeta from "../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../components/meta/TwitterCardMeta";
 import { SocialList } from "../components/SocialList";
-import { getHomeContent, HomeService } from "../lib/home";
+import { getHomeContent, HomeService } from "../lib";
+import { listTags } from "../lib/tags";
 
 type Props = {
   title: string;
@@ -23,12 +23,14 @@ export default function Index({ title, services }: Props) {
           <h1>
             { title }
           </h1>
-          { services.map((service) => (
-            <>
-              <p>{ service.name }</p>
-              <p>{ service.description} </p>
-            </>
-          ))}
+          <ul>
+            { services.map((service) => (
+              <li key={ service.name } >
+                <p>{ service.name }</p>
+                <p>{ service.description} </p>
+              </li>
+            ))}
+          </ul>
           <span className="handle">@nextjs-netlify-blog</span>
           <h2>A blog template with Next.js and Netlify.</h2>
           <SocialList />
@@ -77,10 +79,12 @@ export default function Index({ title, services }: Props) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const content = getHomeContent();
-  console.log(content)
+  const tags = listTags();
+  console.log(tags);
   return {
     props: {
-      ...content
+      ...content,
+      tags,
     },
   };
 };
