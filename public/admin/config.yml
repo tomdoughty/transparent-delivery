@@ -139,3 +139,19 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "src/pages/home.mdx"
+        fields:
+          - { label: "Title", name: "title", widget: "string"}
+          - { label: "Body", name: "body", widget: "markdown"}
+          - label: 'Services'
+            name: "services"
+            widget: list
+            fields:
+              - { label: "Name", name: "name", widget: "string"}
+              - { label: "Description", name: "description", widget: "text"}

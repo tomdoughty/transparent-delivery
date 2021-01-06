@@ -1,10 +1,18 @@
+import matter from "gray-matter";
+import { GetStaticProps } from "next";
 import Layout from "../components/Layout";
 import BasicMeta from "../components/meta/BasicMeta";
 import OpenGraphMeta from "../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../components/meta/TwitterCardMeta";
 import { SocialList } from "../components/SocialList";
+import { getHomeContent, HomeService } from "../lib/home";
 
-export default function Index() {
+type Props = {
+  title: string;
+  services: HomeService[];
+};
+
+export default function Index({ title, services }: Props) {
   return (
     <Layout>
       <BasicMeta url={"/"} />
@@ -13,8 +21,14 @@ export default function Index() {
       <div className="container">
         <div>
           <h1>
-            Hi, We're Next.js & Netlify<span className="fancy">.</span>
+            { title }
           </h1>
+          { services.map((service) => (
+            <>
+              <p>{ service.name }</p>
+              <p>{ service.description} </p>
+            </>
+          ))}
           <span className="handle">@nextjs-netlify-blog</span>
           <h2>A blog template with Next.js and Netlify.</h2>
           <SocialList />
@@ -60,3 +74,13 @@ export default function Index() {
     </Layout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const content = getHomeContent();
+  console.log(content)
+  return {
+    props: {
+      ...content
+    },
+  };
+};
