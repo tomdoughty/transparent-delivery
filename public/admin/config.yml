@@ -142,11 +142,12 @@ collections:
 
   - name: "pages"
     label: "Pages"
+    folder: "src/pages"
+    format: "frontmatter"
     files:
       - label: "Home"
         name: "home"
-        file: "src/pages/home.mdx"
-        format: "frontmatter"
+        file: "home.mdx"
         fields:
           - label: "Slug"
             name: "slug"
