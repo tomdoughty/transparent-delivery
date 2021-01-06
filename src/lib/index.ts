@@ -21,7 +21,7 @@ export function getHomeContent(): HomeContent {
   }
 
   // Read markdown file as string
-  const fileContents = fs.readFileSync('src/pages/home.mdx', "utf8");
+  const fileContents = fs.readFileSync('src/pages/index.mdx', "utf8");
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents, {
